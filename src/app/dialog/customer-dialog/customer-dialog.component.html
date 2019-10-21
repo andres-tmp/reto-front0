@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Crear cliente</h1>
+
+<div mat-dialog-content>
+
+  <form>
+<!--    {{customer | json}}-->
+    <mat-form-field>
+      <input matInput
+             placeholder="Nombre"
+             [(ngModel)]="customer.firstName" name="firstName" required >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Apellido"
+             [(ngModel)]="customer.lastName" name="lastName" required >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Fecha nacimiento"
+             [(ngModel)]="customer.birthday" name="birthday" required >
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput
+             placeholder="Edad"
+             [(ngModel)]="customer.age" name="age" required >
+    </mat-form-field>
+
+
+
+  </form>
+
+</div>
+
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="save()" cdkFocusInitial>Guardar</button>
+</div>
