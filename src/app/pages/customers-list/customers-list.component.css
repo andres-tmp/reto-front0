@@ -1,4 +1,4 @@
-.container{
+.container {
   margin: 20px;
 }
 
@@ -14,10 +14,10 @@
   flex-direction: column;
   flex-basis: 100%;
   flex: 1;
-  margin: 0 8px;
+  padding: 0 8px;
 }
 
-.section-container{
+.section-container {
   margin-top: 20px;
 }
 
@@ -25,7 +25,13 @@ table {
   width: 100%;
 }
 
-.indicator{
+.indicator {
   margin: 0 8px;
   font-size: 24px;
 }
+
+.button-row {
+  display: flex;
+  flex-direction:row-reverse;
+}
+

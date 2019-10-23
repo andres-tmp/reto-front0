@@ -4,25 +4,25 @@
 
   <form>
 <!--    {{customer | json}}-->
-    <mat-form-field>
+    <mat-form-field class="full-width">
       <input matInput
              placeholder="Nombre"
              [(ngModel)]="customer.firstName" name="firstName" required >
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field  class="full-width">
       <input matInput
              placeholder="Apellido"
              [(ngModel)]="customer.lastName" name="lastName" required >
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="full-width">
       <input matInput
-             placeholder="Fecha nacimiento"
+             placeholder="Fecha nacimiento yyyy-MM-dd"
              [(ngModel)]="customer.birthday" name="birthday" required >
     </mat-form-field>
 
-    <mat-form-field>
+    <mat-form-field class="full-width">
       <input matInput
              placeholder="Edad"
              [(ngModel)]="customer.age" name="age" required >

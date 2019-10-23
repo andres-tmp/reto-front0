@@ -19,16 +19,18 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule, MatToolbarModule, MatDialogModule
+  MatFormFieldModule, MatToolbarModule, MatDialogModule, MatTooltipModule
 } from '@angular/material';
 import { CustomerDialogComponent } from './dialog/customer-dialog/customer-dialog.component';
 import {FormsModule} from '@angular/forms';
+import { ConfirmationDialogComponent } from './dialog/confirmation-dialog/confirmation-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CustomersListComponent,
-    CustomerDialogComponent
+    CustomerDialogComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -50,12 +52,13 @@ import {FormsModule} from '@angular/forms';
     MatIconModule,
     MatButtonModule,
     MatCardModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatTooltipModule
 
 
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents : [CustomerDialogComponent]
+  entryComponents : [CustomerDialogComponent, ConfirmationDialogComponent]
 })
 export class AppModule { }

@@ -6,6 +6,7 @@ import {MatDialog} from '@angular/material';
 import {AngularFireList} from '@angular/fire/database';
 import {Customer, CustomerReport} from '../../domain/customer';
 import {CustomerService} from '../../services/customer.service';
+import {ConfirmationDialogComponent} from '../../dialog/confirmation-dialog/confirmation-dialog.component';
 
 @Component({
   selector: 'app-customers-list',
@@ -36,7 +37,7 @@ export class CustomersListComponent implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(CustomerDialogComponent, {
-      width: '250px',
+      width: '350px',
       //data: {name: this.name, animal: this.animal}
     });
 
@@ -52,9 +53,19 @@ export class CustomersListComponent implements OnInit {
   }
 
   deleteCustomer(customer: any){
-    console.log("Eliminando cliente");
-    console.log(customer);
     this.customerService.deleteCustomer(customer);
+  }
+
+  confirmDelete(customer: any){
+    const dialogRef = this.dialog.open(ConfirmationDialogComponent, {
+      width: '350px',
+      data: "¿Desea eliminar este cliente?"
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if(result) {
+        this.deleteCustomer(customer);
+      }
+    });
   }
 
 }
