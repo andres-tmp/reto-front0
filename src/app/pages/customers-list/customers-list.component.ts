@@ -20,6 +20,7 @@ export class CustomersListComponent implements OnInit {
 
   customers: any;
   report: any = {};
+  loading: boolean = true;
 
   constructor(public db: AngularFirestore,
               public customerService: CustomerService,
@@ -30,6 +31,7 @@ export class CustomersListComponent implements OnInit {
 
   ngOnInit() {
     this.customerService.getCustomers().subscribe( res =>{
+      this.loading = false;
       this.report = res;
     });
   }
