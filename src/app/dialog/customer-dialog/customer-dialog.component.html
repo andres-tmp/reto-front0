@@ -20,14 +20,21 @@
     <mat-form-field class="full-width">
       <input matInput
              placeholder="Fecha nacimiento yyyy-MM-dd"
-             [(ngModel)]="customer.birthday" name="birthday" required >
+             [(ngModel)]="customer.birthday" name="birthday" required>
     </mat-form-field>
 
-    <mat-form-field class="full-width">
-      <input matInput
-             placeholder="Edad"
-             [(ngModel)]="customer.age" name="age" required >
-    </mat-form-field>
+<!--    <mat-form-field class="full-width">-->
+<!--      <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" [(ngModel)]="customer.birthday" name="birthday" required>-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker></mat-datepicker>-->
+<!--    </mat-form-field>-->
+
+
+<!--    <mat-form-field class="full-width">-->
+<!--      <input matInput-->
+<!--             placeholder="Edad"-->
+<!--             [(ngModel)]="customer.age" name="age" required >-->
+<!--    </mat-form-field>-->
 
 
 

@@ -5,10 +5,10 @@ export class Customer {
   id : string;
   firstName: string;
   lastName: string;
-  age : number;
+  age : number = 0;
   birthday: string;
   estimatedDeathDate: Date;
-
+  ageCalculated : string;
 }
 
 export class CustomerReport{

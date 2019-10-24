@@ -19,7 +19,7 @@ import {
   MatIconModule,
   MatButtonModule,
   MatCardModule,
-  MatFormFieldModule, MatToolbarModule, MatDialogModule, MatTooltipModule
+  MatFormFieldModule, MatToolbarModule, MatDialogModule, MatTooltipModule, MatDatepickerModule, MatNativeDateModule
 } from '@angular/material';
 import { CustomerDialogComponent } from './dialog/customer-dialog/customer-dialog.component';
 import {FormsModule} from '@angular/forms';
@@ -53,11 +53,13 @@ import { ConfirmationDialogComponent } from './dialog/confirmation-dialog/confir
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatDatepickerModule,
+    MatNativeDateModule
 
 
   ],
-  providers: [],
+  providers: [MatDatepickerModule],
   bootstrap: [AppComponent],
   entryComponents : [CustomerDialogComponent, ConfirmationDialogComponent]
 })

@@ -45,12 +45,10 @@ export class CustomersListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
-      console.log(result);
+      if(result == undefined) return;
 
       let customer : Customer = result;
-
       this.customerService.createCustomer(customer);
-
     });
   }
 

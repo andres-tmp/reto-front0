@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import {Customer, CustomerReport} from '../domain/customer';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
 import {MathService} from './math.service';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -27,6 +28,7 @@ export class CustomerService {
             const data = a.payload.doc.data() as Customer;
             data.id = a.payload.doc.id;
             data.estimatedDeathDate = this.calculateDeathDate(data.birthday);
+            data.ageCalculated = this.calculateAge(data.birthday);
             return data;
           });
 
@@ -63,6 +65,16 @@ export class CustomerService {
     let birthdayDate = birthday.toDate();
     let lifeExpectancy = 75;
 
-    return new Date(birthdayDate.setFullYear(birthdayDate.getFullYear() + lifeExpectancy));
+    //return new Date(birthdayDate.setFullYear(birthdayDate.getFullYear() + lifeExpectancy));
+    return moment(birthdayDate).add(lifeExpectancy, 'years').toDate();
+  }
+
+  calculateAge(birthday : any) : string{
+    let age  = moment().diff(birthday.toDate(), 'years');
+    if(age > 0){
+      return ""+age;
+    }else{
+      return "En planes";
+    }
   }
 }
